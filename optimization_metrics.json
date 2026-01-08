@@ -1,0 +1,332 @@
+{
+  "optimization_results": {
+    "algorithm": "QAOA",
+    "status": "SUCCESS",
+    "objective_value": -203.0,
+    "num_selected_zones": 5,
+    "selected_zone_ids": [
+      0,
+      1,
+      7,
+      11,
+      13
+    ],
+    "max_drilling_sites": 5
+  },
+  "metrics": {
+    "total_probability": 2.223643264517252,
+    "total_cost": 0.11045072902402693,
+    "total_risk": 0.12272389051057155,
+    "total_area_ha": 5.778895981687997,
+    "net_benefit": 203.0
+  },
+  "comparison": {
+    "qaoa_benefit": 203.0,
+    "greedy_benefit": 203.0,
+    "improvement_percent": 0.0
+  },
+  "zones_table": [
+    {
+      "zone_id": 0,
+      "probability": 0.44664544904882514,
+      "cost": 0.020134529135235033,
+      "risk": 0.019086614479635645,
+      "area_ha": 0.9637362136302258,
+      "probability_scaled": 44,
+      "cost_scaled": 2,
+      "risk_scaled": 1,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 1,
+      "probability": 0.4436654951789342,
+      "cost": 0.019697088113314998,
+      "risk": 0.02681093953401456,
+      "area_ha": 0.9636673179557831,
+      "probability_scaled": 44,
+      "cost_scaled": 1,
+      "risk_scaled": 2,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 2,
+      "probability": 0.45381379564802243,
+      "cost": 0.04374520901878007,
+      "risk": 0.05033304566268422,
+      "area_ha": 4.818257650172593,
+      "probability_scaled": 45,
+      "cost_scaled": 4,
+      "risk_scaled": 5,
+      "net_benefit": 36,
+      "qubo_coeff": -36
+    },
+    {
+      "zone_id": 3,
+      "probability": 0.43837224470936037,
+      "cost": 0.02852649393341234,
+      "risk": 0.03630478837999527,
+      "area_ha": 0.9636348727703659,
+      "probability_scaled": 43,
+      "cost_scaled": 2,
+      "risk_scaled": 3,
+      "net_benefit": 38,
+      "qubo_coeff": -38
+    },
+    {
+      "zone_id": 4,
+      "probability": 0.452233283669082,
+      "cost": 0.031239813474477615,
+      "risk": 0.031210119189682795,
+      "area_ha": 0.9634358152383964,
+      "probability_scaled": 45,
+      "cost_scaled": 3,
+      "risk_scaled": 3,
+      "net_benefit": 39,
+      "qubo_coeff": -39
+    },
+    {
+      "zone_id": 5,
+      "probability": 0.44687998674454354,
+      "cost": 0.06352841346855125,
+      "risk": 0.06283676697671887,
+      "area_ha": 0.9634276783645584,
+      "probability_scaled": 44,
+      "cost_scaled": 6,
+      "risk_scaled": 6,
+      "net_benefit": 32,
+      "qubo_coeff": -32
+    },
+    {
+      "zone_id": 6,
+      "probability": 0.4323633247588014,
+      "cost": 0.07682267667305086,
+      "risk": 0.07858804556462178,
+      "area_ha": 0.9631708819003134,
+      "probability_scaled": 43,
+      "cost_scaled": 7,
+      "risk_scaled": 7,
+      "net_benefit": 29,
+      "qubo_coeff": -29
+    },
+    {
+      "zone_id": 7,
+      "probability": 0.4561973170121713,
+      "cost": 0.028459315946071505,
+      "risk": 0.029243850153287166,
+      "area_ha": 0.9630155344263296,
+      "probability_scaled": 45,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 8,
+      "probability": 0.44253565922066584,
+      "cost": 0.04568888663895183,
+      "risk": 0.04751634719705725,
+      "area_ha": 0.9629786915386359,
+      "probability_scaled": 44,
+      "cost_scaled": 4,
+      "risk_scaled": 4,
+      "net_benefit": 36,
+      "qubo_coeff": -36
+    },
+    {
+      "zone_id": 9,
+      "probability": 0.4467441998407609,
+      "cost": 0.03974191900531157,
+      "risk": 0.04476575536639634,
+      "area_ha": 0.9629541189570635,
+      "probability_scaled": 44,
+      "cost_scaled": 3,
+      "risk_scaled": 4,
+      "net_benefit": 37,
+      "qubo_coeff": -37
+    },
+    {
+      "zone_id": 10,
+      "probability": 0.4399024206274607,
+      "cost": 0.033537429718598265,
+      "risk": 0.03930863688967218,
+      "area_ha": 1.9258385863742438,
+      "probability_scaled": 43,
+      "cost_scaled": 3,
+      "risk_scaled": 3,
+      "net_benefit": 37,
+      "qubo_coeff": -37
+    },
+    {
+      "zone_id": 11,
+      "probability": 0.447668630332719,
+      "cost": 0.026715863567967253,
+      "risk": 0.029014732117133818,
+      "area_ha": 1.9257237917385515,
+      "probability_scaled": 44,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 40,
+      "qubo_coeff": -40
+    },
+    {
+      "zone_id": 12,
+      "probability": 0.4470155225189122,
+      "cost": 0.029360195728399426,
+      "risk": 0.03282448823996547,
+      "area_ha": 0.9628147133804535,
+      "probability_scaled": 44,
+      "cost_scaled": 2,
+      "risk_scaled": 3,
+      "net_benefit": 39,
+      "qubo_coeff": -39
+    },
+    {
+      "zone_id": 13,
+      "probability": 0.4294663729446025,
+      "cost": 0.015443932261438139,
+      "risk": 0.018567754226500352,
+      "area_ha": 0.9627531239371069,
+      "probability_scaled": 42,
+      "cost_scaled": 1,
+      "risk_scaled": 1,
+      "net_benefit": 40,
+      "qubo_coeff": -40
+    },
+    {
+      "zone_id": 14,
+      "probability": 0.39949193941671374,
+      "cost": 0.026451643886024598,
+      "risk": 0.025229031281890617,
+      "area_ha": 0.9621964231786782,
+      "probability_scaled": 39,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 35,
+      "qubo_coeff": -35
+    },
+    {
+      "zone_id": 15,
+      "probability": 0.4495254322581565,
+      "cost": 0.04152246244211672,
+      "risk": 0.04218967340886722,
+      "area_ha": 0.9618228943733007,
+      "probability_scaled": 44,
+      "cost_scaled": 4,
+      "risk_scaled": 4,
+      "net_benefit": 36,
+      "qubo_coeff": -36
+    },
+    {
+      "zone_id": 16,
+      "probability": 0.4370103969144421,
+      "cost": 0.02192507739789704,
+      "risk": 0.02666726068171312,
+      "area_ha": 0.9617437934433921,
+      "probability_scaled": 43,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 39,
+      "qubo_coeff": -39
+    },
+    {
+      "zone_id": 17,
+      "probability": 0.45429142884529794,
+      "cost": 0.041470218062484326,
+      "risk": 0.047643040582606176,
+      "area_ha": 4.807887166909207,
+      "probability_scaled": 45,
+      "cost_scaled": 4,
+      "risk_scaled": 4,
+      "net_benefit": 37,
+      "qubo_coeff": -37
+    },
+    {
+      "zone_id": 18,
+      "probability": 0.4395621402632874,
+      "cost": 0.05322683654445153,
+      "risk": 0.05270469264853286,
+      "area_ha": 0.9615226924222143,
+      "probability_scaled": 43,
+      "cost_scaled": 5,
+      "risk_scaled": 5,
+      "net_benefit": 33,
+      "qubo_coeff": -33
+    },
+    {
+      "zone_id": 19,
+      "probability": 0.43882105495177,
+      "cost": 0.0439190596905441,
+      "risk": 0.04959033902911268,
+      "area_ha": 1.927460274616458,
+      "probability_scaled": 43,
+      "cost_scaled": 4,
+      "risk_scaled": 4,
+      "net_benefit": 35,
+      "qubo_coeff": -35
+    }
+  ],
+  "selected_zones_data": [
+    {
+      "zone_id": 0,
+      "probability": 0.44664544904882514,
+      "cost": 0.020134529135235033,
+      "risk": 0.019086614479635645,
+      "area_ha": 0.9637362136302258,
+      "probability_scaled": 44,
+      "cost_scaled": 2,
+      "risk_scaled": 1,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 1,
+      "probability": 0.4436654951789342,
+      "cost": 0.019697088113314998,
+      "risk": 0.02681093953401456,
+      "area_ha": 0.9636673179557831,
+      "probability_scaled": 44,
+      "cost_scaled": 1,
+      "risk_scaled": 2,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 7,
+      "probability": 0.4561973170121713,
+      "cost": 0.028459315946071505,
+      "risk": 0.029243850153287166,
+      "area_ha": 0.9630155344263296,
+      "probability_scaled": 45,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 41,
+      "qubo_coeff": -41
+    },
+    {
+      "zone_id": 11,
+      "probability": 0.447668630332719,
+      "cost": 0.026715863567967253,
+      "risk": 0.029014732117133818,
+      "area_ha": 1.9257237917385515,
+      "probability_scaled": 44,
+      "cost_scaled": 2,
+      "risk_scaled": 2,
+      "net_benefit": 40,
+      "qubo_coeff": -40
+    },
+    {
+      "zone_id": 13,
+      "probability": 0.4294663729446025,
+      "cost": 0.015443932261438139,
+      "risk": 0.018567754226500352,
+      "area_ha": 0.9627531239371069,
+      "probability_scaled": 42,
+      "cost_scaled": 1,
+      "risk_scaled": 1,
+      "net_benefit": 40,
+      "qubo_coeff": -40
+    }
+  ]
+}
