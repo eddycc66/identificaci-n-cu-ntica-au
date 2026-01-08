@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Optimización Cuántica Minera | DSS Gold Mining</title>
+
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+        <div class="quantum-particle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDAKjdyOSH0FwBWL-cf4MRGV7lO3Vz64VfkKTVHuoNFqJvp75EVBt_Y1vaHwSNVbVWatClCJ3r09LESViMB0KfrwaLEa0kJmrLujB2R7VqlbQE-XmpZcx6h4nq6rSr1b0xWhup8TN0JbpjMhw1Tdtg7lKT3oJLeShF8dFbRTSV5e-aiZcMYUVBACTrToUP/s320/Image%20to%20video%20%E4%B8%A8%20que%20el%20dron%20ingrese%20volando%20y%20se%20ponga%20sobre%20la%20monta%C3%B1a.gif"
+                    alt="Geonorth Logo" class="company-logo">
+                <div class="title-group">
+                    <h1 class="main-title">Sistema de Optimización Cuántica</h1>
+                    <p class="subtitle">Decision Support System | Gold Mining Exploitation</p>
+                    <p class="author-info">
+                        <i class="fas fa-user-tie"></i>
+                        M.Sc. Edwin Calle Condori | Founder & CEO – Geonorth
+                    </p>
+                </div>
+            </div>
+            <div class="status-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>OPTIMIZACIÓN COMPLETADA</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Top Metrics Panel -->
+        <section class="metrics-overview">
+            <div class="metric-card benefit-card">
+                <div class="metric-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="metric-content">
+                    <h3 class="metric-label">Beneficio Neto</h3>
+                    <p class="metric-value" id="netBenefit">--</p>
+                    <span class="metric-sublabel">Valor optimizado</span>
+                </div>
+                <div class="metric-trend positive">
+                    <i class="fas fa-arrow-up"></i>
+                    <span id="improvement">--</span>
+                </div>
+            </div>
+
+            <div class="metric-card probability-card">
+                <div class="metric-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="metric-content">
+                    <h3 class="metric-label">Probabilidad Total</h3>
+                    <p class="metric-value" id="totalProbability">--</p>
+                    <span class="metric-sublabel">Prospectividad acumulada</span>
+                </div>
+            </div>
+
+            <div class="metric-card cost-card">
+                <div class="metric-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="metric-content">
+                    <h3 class="metric-label">Costo Total</h3>
+                    <p class="metric-value" id="totalCost">--</p>
+                    <span class="metric-sublabel">Inversión requerida</span>
+                </div>
+            </div>
+
+            <div class="metric-card risk-card">
+                <div class="metric-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="metric-content">
+                    <h3 class="metric-label">Riesgo Agregado</h3>
+                    <p class="metric-value" id="totalRisk">--</p>
+                    <span class="metric-sublabel">Factor de riesgo</span>
+                </div>
+            </div>
+
+            <div class="metric-card zones-card">
+                <div class="metric-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="metric-content">
+                    <h3 class="metric-label">Zonas Seleccionadas</h3>
+                    <p class="metric-value" id="numZones">--</p>
+                    <span class="metric-sublabel">De <span id="maxZones">--</span> posibles</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+
+            <!-- Left Column: Map -->
+            <section class="map-section">
+                <div class="panel-header">
+                    <h2 class="panel-title">
+                        <i class="fas fa-globe-americas"></i>
+                        Geovisor de Prospectividad Mineral
+                    </h2>
+                    <div class="map-controls">
+                        <button class="control-btn" id="toggleProspect">
+                            <i class="fas fa-layer-group"></i>
+                            Prospectividad
+                        </button>
+                        <button class="control-btn" id="toggleZones">
+                            <i class="fas fa-map-pin"></i>
+                            Zonas Óptimas
+                        </button>
+                    </div>
+                </div>
+                <div class="map-container" id="map"></div>
+                <div class="map-legend">
+                    <h4><i class="fas fa-palette"></i> Leyenda</h4>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <div class="legend-color"
+                                style="background: linear-gradient(to right, blue, cyan, yellow, orange, red);"></div>
+                            <span>Prospectividad Mineral (Bajo → Alto)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-marker star"></div>
+                            <span>Zonas Seleccionadas (QAOA)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-marker square"></div>
+                            <span>Región de Estudio</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Charts -->
+            <section class="charts-section">
+
+                <!-- Algorithm Comparison Chart -->
+                <div class="chart-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-chart-bar"></i>
+                            Comparación de Algoritmos
+                        </h3>
+                    </div>
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+
+                <!-- Metrics Distribution Chart -->
+                <div class="chart-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-chart-pie"></i>
+                            Distribución de Métricas
+                        </h3>
+                    </div>
+                    <canvas id="metricsChart"></canvas>
+                </div>
+
+                <!-- Zone Benefit Chart -->
+                <div class="chart-panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <i class="fas fa-chart-line"></i>
+                            Beneficio por Zona Seleccionada
+                        </h3>
+                    </div>
+                    <canvas id="zoneChart"></canvas>
+                </div>
+
+            </section>
+        </div>
+
+        <!-- Zones Table Section -->
+        <section class="table-section">
+            <div class="panel-header">
+                <h2 class="panel-title">
+                    <i class="fas fa-table"></i>
+                    Tabla de Zonas Seleccionadas (QAOA)
+                </h2>
+                <div class="table-controls">
+                    <button class="control-btn" id="exportCSV">
+                        <i class="fas fa-download"></i>
+                        Exportar CSV
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table id="zonesTable">
+                    <thead>
+                        <tr>
+                            <th>ID Zona</th>
+                            <th>Probabilidad</th>
+                            <th>Costo</th>
+                            <th>Riesgo</th>
+                            <th>Área (ha)</th>
+                            <th>Beneficio Neto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="zonesTableBody">
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Optimization Details Section -->
+        <section class="details-section">
+            <div class="panel-header">
+                <h2 class="panel-title">
+                    <i class="fas fa-cogs"></i>
+                    Detalles de la Optimización Cuántica
+                </h2>
+            </div>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h4><i class="fas fa-atom"></i> Algoritmo</h4>
+                    <p class="detail-value">QAOA (Quantum Approximate Optimization Algorithm)</p>
+                    <p class="detail-description">Optimización variacional cuántica</p>
+                </div>
+                <div class="detail-card">
+                    <h4><i class="fas fa-microchip"></i> Backend</h4>
+                    <p class="detail-value">Qiskit Aer Simulator</p>
+                    <p class="detail-description">Simulador cuántico de IBM</p>
+                </div>
+                <div class="detail-card">
+                    <h4><i class="fas fa-layer-group"></i> Capas QAOA</h4>
+                    <p class="detail-value" id="qaoaLayers">3</p>
+                    <p class="detail-description">Profundidad del circuito variacional</p>
+                </div>
+                <div class="detail-card">
+                    <h4><i class="fas fa-bullseye"></i> Estado</h4>
+                    <p class="detail-value" id="optStatus">OPTIMAL</p>
+                    <p class="detail-description">Convergencia del algoritmo</p>
+                </div>
+                <div class="detail-card">
+                    <h4><i class="fas fa-brain"></i> Optimizador Clásico</h4>
+                    <p class="detail-value">COBYLA</p>
+                    <p class="detail-description">Para parámetros variacionales</p>
+                </div>
+                <div class="detail-card">
+                    <h4><i class="fas fa-database"></i> Variables QUBO</h4>
+                    <p class="detail-value" id="numVariables">--</p>
+                    <p class="detail-description">Variables binarias del problema</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-satellite"></i> Datos Fuente</h4>
+                <p>Sentinel-2 SR, SRTM DEM</p>
+                <p>Google Earth Engine</p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-brain"></i> Modelos IA</h4>
+                <p>Random Forest (scikit-learn)</p>
+                <p>Clasificación supervisada</p>
+            </div>
+            <div class="footer-section">
+                <h4><i class="fas fa-atom"></i> Optimización Cuántica</h4>
+                <p>QAOA - Qiskit</p>
+                <p>QUBO Formulation</p>
+            </div>
+            <div class="footer-section">
+                <p class="copyright">
+                    <i class="fas fa-code"></i>
+                    Sistema Geocientífico de Optimización Cuántica © 2026
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="quantum-loader"></div>
+            <h2>Cargando Sistema de Optimización...</h2>
+            <p>Procesando datos satelitales y resultados cuánticos</p>
+        </div>
+    </div>
+
+    <!-- Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
